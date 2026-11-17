@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Contact details live only in `src/lib/site-config.ts`; contact buttons read from it so adding a contact is a one-place change.
+- Portfolio sections are separate components in `src/components/portfolio/`, composed on the single `/` page with in-page anchors, because the site is a one-page portfolio.
