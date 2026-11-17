@@ -19,7 +19,7 @@ export function Projects() {
             href={NIGHT_COFFEE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+            className="group overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <div className="overflow-hidden border-b border-border">
               <img
@@ -31,16 +31,14 @@ export function Projects() {
                 className="aspect-[1200/708] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
             </div>
-            <div className="flex items-start justify-between gap-4 p-6 sm:p-7">
+            <div className="flex flex-col gap-6 p-6 sm:p-7 md:flex-row md:items-end md:justify-between">
               <div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="font-display text-xl font-semibold tracking-tight">
-                    Night Coffee Demo
-                  </h3>
-                  <span className="rounded-full bg-accent px-2.5 py-0.5 font-mono text-[11px] text-accent-foreground">
-                    демо
-                  </span>
-                </div>
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                  Демонстрационный проект
+                </p>
+                <h3 className="mt-2 font-display text-xl font-semibold tracking-tight">
+                  Night Coffee Demo
+                </h3>
                 <p className="mt-2 text-muted-foreground">
                   Демонстрационный сайт кофейни: главный экран, меню и контакты.
                 </p>
@@ -48,9 +46,9 @@ export function Projects() {
                   night-coffee-demo.lovable.app
                 </p>
               </div>
-              <span className="grid size-11 shrink-0 place-items-center rounded-full border border-border transition-colors group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground">
-                <ArrowUpRight className="size-5" />
-                <span className="sr-only">Открыть сайт</span>
+              <span className="inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-full bg-primary px-5 py-3 font-display text-sm font-medium text-primary-foreground transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground md:self-auto">
+                Посмотреть сайт
+                <ArrowUpRight className="size-4" />
               </span>
             </div>
           </a>
