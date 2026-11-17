@@ -1,19 +1,19 @@
 /**
  * Единое место для данных сайта.
  *
- * Контакты пока не указаны — это место под реальные данные:
- *  - `telegram.href` — ссылка на Telegram, например "https://t.me/username";
- *  - `telegram.label` — то, что показываем рядом, например "@username";
- *  - `contact.href` / `contact.label` — любой другой способ связи (email, форма...).
+ * Реальные контакты хранятся только здесь:
+ *  - `telegram.href` — ссылка на Telegram (сейчас https://t.me/AoimineDayki);
+ *  - `telegram.label` — то, что показываем рядом (сейчас @AoimineDayki);
+ *  - `contact.href` / `contact.label` — любой другой способ связи (email, форма...);
+ *    пока пустой — вторая кнопка в разделе контактов не показывается.
  *
- * Пока поля пустые, кнопки в разделе контактов выглядят отключёнными и рядом
- * показывается подсказка-заглушка. Ничего выдуманного здесь быть не должно.
+ * Ничего выдуманного здесь быть не должно: добавляем только то, что дал пользователь.
  */
 export const siteConfig = {
   name: "My Developer Portfolio",
   telegram: {
-    label: "",
-    href: "",
+    label: "@AoimineDayki",
+    href: "https://t.me/AoimineDayki",
   },
   contact: {
     label: "",
