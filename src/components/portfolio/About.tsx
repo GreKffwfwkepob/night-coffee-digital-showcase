@@ -1,4 +1,3 @@
-import { SectionHeading } from "./SectionHeading";
 
 const values = [
   { title: "Простота", text: "Понятная структура и ничего лишнего." },
@@ -10,10 +9,16 @@ export function About() {
   return (
     <section id="about" className="border-t border-border">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
-        <SectionHeading index="03" eyebrow="Обо мне" title="Обо мне" />
-        <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-10">
-          <div className="hidden md:block" />
+        <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-10">
           <div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="text-foreground">03</span> / Обо мне
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+              Обо мне
+            </h2>
+          </div>
+          <div className="md:pt-9">
             <p className="font-display text-xl font-medium leading-snug tracking-tight sm:text-2xl md:text-[1.75rem]">
               Я начинающий разработчик. Изучаю <span className="text-marker">Vibe Coding</span> —
               создание сайтов и приложений вместе с AI — и делаю практические проекты.
