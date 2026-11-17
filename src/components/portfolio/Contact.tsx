@@ -1,6 +1,6 @@
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { hasContact, siteConfig } from "@/lib/site-config";
+import { hasContact, hasTelegram, siteConfig } from "@/lib/site-config";
 
 export function Contact() {
   return (
@@ -19,23 +19,41 @@ export function Contact() {
         </p>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-          {hasContact ? (
+          {hasTelegram ? (
             <Button asChild variant="lime" size="xl">
-              <a href={siteConfig.contact.href} target="_blank" rel="noopener noreferrer">
-                <MessageCircle /> Связаться <ArrowUpRight />
+              <a href={siteConfig.telegram.href} target="_blank" rel="noopener noreferrer">
+                <Send /> Написать в Telegram <ArrowUpRight />
               </a>
             </Button>
           ) : (
-            <>
-              <Button variant="lime" size="xl" disabled>
-                <MessageCircle /> Связаться
-              </Button>
-              <p className="rounded-xl border border-dashed border-ink-line px-4 py-3 font-mono text-xs text-ink-muted">
-                Место для контакта: Telegram, email или другой способ связи
-              </p>
-            </>
+            <Button variant="lime" size="xl" disabled aria-disabled="true">
+              <Send /> Написать в Telegram
+            </Button>
+          )}
+
+          {hasContact && (
+            <Button
+              asChild
+              variant="line"
+              size="xl"
+              className="border-ink-line text-primary-foreground hover:bg-ink-line"
+            >
+              <a href={siteConfig.contact.href} target="_blank" rel="noopener noreferrer">
+                <Mail /> {siteConfig.contact.label || "Связаться"} <ArrowUpRight />
+              </a>
+            </Button>
           )}
         </div>
+
+        {!hasTelegram && (
+          <p className="mt-4 max-w-md rounded-xl border border-dashed border-ink-line px-4 py-3 font-mono text-xs text-ink-muted">
+            Место для контакта: сюда добавим ссылку на Telegram, когда она появится
+          </p>
+        )}
+
+        {hasTelegram && siteConfig.telegram.label && (
+          <p className="mt-4 font-mono text-sm text-ink-muted">{siteConfig.telegram.label}</p>
+        )}
         {hasContact && siteConfig.contact.label && (
           <p className="mt-4 font-mono text-sm text-ink-muted">{siteConfig.contact.label}</p>
         )}
